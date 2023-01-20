@@ -1,0 +1,38 @@
+body{
+width: 1440px;
+    background-color: hsl(212, 45%, 89%) ;
+font-size: 15px;
+font-family:"Outfit ExtraLight";
+align-items: center;
+
+}
+
+#container{
+    margin: 20% 40%;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    border: 30px;
+    justify-content: center;
+    background-color:hsl(0, 0%, 100%) ;
+    border-radius: 20px;
+    
+}
+#paragraph1{
+    font-weight: 700;
+    font-family: 'Outfit', sans-serif;
+    text-align: center;
+    font-size: larger;
+   
+}
+#paragraph2{
+font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    color: hsl(220, 15%, 55%);
+    font-size: large;
+    text-align: center;
+    margin-top: 0px;
+}
+img{
+    border-radius: 10px;
+}
