@@ -28,7 +28,7 @@ nav h3{
     font-size:larger;
 }
 .Tour{
-    color:aqua;
+    color:#30bf8f;
 }
 
 
@@ -45,7 +45,7 @@ line-height: 80px;
     display: flex;
      justify-content: center;
     align-items: center;
-    background-color: aqua;
+    background-color: #30bf8f;
     border-radius: 30px;
     width: 100px;
     height: 40px;
@@ -100,7 +100,7 @@ a{
     display: flex;
     justify-content: center;
    align-items: center;
-   background-color: aqua;
+   background-color: #30bf8f;
    border-radius: 30px;
    width: 100px;
    height: 40px;
@@ -178,7 +178,7 @@ margin-top: 15px;
 }
 .paragraph1{
     font-size: 15px;
-    border: 2px solid aqua;
+    border: 2px solid #30bf8f;
     border-radius: 10px;
 }
 .image{
@@ -190,7 +190,7 @@ margin-top: 15px;
 }
 .paragraph2{
     font-size: 25px;
-    border: 3px solid  aqua;
+    border: 3px solid #30bf8f;
     border-radius: 15px;
 }
 .LastSection{
@@ -199,7 +199,6 @@ margin-top: 15px;
     height: 500px;
     font-size: 15px;
     font-weight: bolder;
-    
 }
 .column-1{
     display: flex;
@@ -210,11 +209,13 @@ margin-top: 15px;
     display: flex;
     justify-content: space-between;
     height: 100px;
+
 }
 .column-3{
     display: flex;
     justify-content: space-between;
     height: 100px;
+    
 }
 .column-4{
      display: flex;
