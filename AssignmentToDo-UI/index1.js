@@ -1,4 +1,3 @@
-alert("tap TODO to add task")
 let todos = [];
 let input = document.getElementById("form");
 const createTask = document.getElementById("createtask");
