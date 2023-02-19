@@ -105,29 +105,30 @@ active.addEventListener("click", () => {
   savedTodos.forEach((element) => {
     if (element.completed == false) {
       activeTodos.innerHTML += `
-        <div id= 'list'>
- 
-   
+      Active:
+      <div id= 'list'>
     <div id='row'>
-    <input data-id=${element.id} id='check' type= 'checkbox'></input>
     <p>${element.todo}</li>
     </div>
-    <button id= 'delete' data-id= '${element.id}'><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="#494C6B" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></svg></button>
    </div>
     `;
     }
   });
 });
+active.addEventListener('dblclick', ()=>{
+  activeTodos.innerHTML+=""
+})
 let completed = document.getElementById("completed");
 completed.addEventListener("click", () => {
   savedTodos.forEach((element) => {
     if (element.completed == true) {
-      completedTodos.innerHTML += `<div id= 'list'>
+      completedTodos.innerHTML += 
+      `
+      Completed:
+      <div id= 'list'>
         <div id='row'>
-        <input data-id=${element.id} id='check' type= 'checkbox'></input>
         <p>${element.todo}</li>
         </div>
-        <button id= 'delete' data-id= '${element.id}'><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="#494C6B" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></svg></button>
        </div> 
         `;
     }
