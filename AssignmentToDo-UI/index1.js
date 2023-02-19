@@ -2,6 +2,8 @@ let todos = [];
 let input = document.getElementById("form");
 const createTask = document.getElementById("createtask");
 const todosList = document.getElementById("todosList");
+let activeTodos = document.getElementById("activeTodos")
+let completedTodos = document.getElementById('completedTodos')
 createTask.addEventListener("click", () => {
   input.innerHTML = `
   <input id='todo'  type='text'> 
@@ -102,7 +104,7 @@ let active = document.getElementById("active");
 active.addEventListener("click", () => {
   savedTodos.forEach((element) => {
     if (element.completed == false) {
-      todosList.innerHTML = `
+      activeTodos.innerHTML += `
         <div id= 'list'>
  
    
@@ -120,7 +122,7 @@ let completed = document.getElementById("completed");
 completed.addEventListener("click", () => {
   savedTodos.forEach((element) => {
     if (element.completed == true) {
-      todosList.innerHTML = `<div id= 'list'>
+      completedTodos.innerHTML += `<div id= 'list'>
         <div id='row'>
         <input data-id=${element.id} id='check' type= 'checkbox'></input>
         <p>${element.todo}</li>
@@ -143,3 +145,4 @@ clearCompleted.addEventListener('click', ()=>{
   localStorage.setItem("savedTodos", JSON.stringify(savedTodos))
   location.reload()
   })
+ 
