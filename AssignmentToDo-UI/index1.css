@@ -1,0 +1,101 @@
+*{
+    list-style: none;
+    /* box-sizing: border-box; */
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    color: hsl(234, 39%, 85%) ;
+}
+body{
+    background-color:hsl(235, 21%, 11%) ;
+}
+#label{
+    color: white;
+}
+#list{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+#footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 20px;
+    width: 520px;
+    font-size: 12px;
+   
+    
+}
+#delete{
+    background: none;
+    border: none;  
+}
+#delete :hover{
+    cursor: pointer;
+}
+#header{
+    background-image: url(image.jpg);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    /* padding-top: 150px; */
+    
+}
+#main{
+    margin-top:100px;
+}
+#todo{
+    background-color:  hsl(235, 24%, 19%);
+    border:hsl(237, 14%, 26%) ;
+    border-radius: 5px;
+    padding: 20px;
+    width: 520px;
+}
+#list{
+    background-color: hsl(235, 24%, 19%);
+    width: 520px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 2px solid hsl(233, 14%, 35%);
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+button{
+    background: none;
+    border: none;
+}
+#createtask{
+    font-size: 40px;
+    font-weight: 550;
+    color: white;
+    letter-spacing: 5px;
+}
+#createtask:hover{
+cursor: pointer;
+}
+button:hover{
+    cursor: pointer;
+}
+#check:hover{
+    cursor: pointer;
+}
+#top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#row{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+#check{
+   border-radius: 50%;
+}
+
+  
+
