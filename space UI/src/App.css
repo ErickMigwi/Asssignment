@@ -1,0 +1,12 @@
+body{
+    background-image: url(home.jpg);
+    
+    background-size: cover;
+}
+
+img{
+    width: 400px;
+}
+/* .App{
+    width: 500px;
+} */
