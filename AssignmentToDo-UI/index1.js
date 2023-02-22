@@ -2,8 +2,8 @@ let todos = [];
 let input = document.getElementById("form");
 const createTask = document.getElementById("createtask");
 const todosList = document.getElementById("todosList");
-let activeTodos = document.getElementById("activeTodos")
-let completedTodos = document.getElementById('completedTodos')
+let activeTodos = document.getElementById("activeTodos");
+let completedTodos = document.getElementById("completedTodos");
 createTask.addEventListener("click", () => {
   input.innerHTML = `
   <input id='todo'  type='text'> 
@@ -16,9 +16,23 @@ createTask.addEventListener("click", () => {
       completed: false,
       id: Math.floor(Math.random() * 100000),
     };
-    todos.push(todoObj);
-    let todo = (document.getElementById("todo").value = "");
+    if (todoObj.todo === "") {
+      alert("add a task");
+    } else {
+      todos.push(todoObj);
+    }
+    // let upadatedTodos =JSON.parse(localStorage.getItem("savedTodos"))
+
+    //localStorage.setItem('up', JSON.stringify( upadatedTodos))
     localStorage.setItem("savedTodos", JSON.stringify(todos));
+   // let savedTodos = JSON.parse(localStorage.getItem("savedTodos"));
+    savedTodos.push(todoObj);
+
+    let todo = (document.getElementById("todo").value = "");
+   
+
+   // location.reload();
+
     todosList.innerHTML += `
   <div id= 'list'> 
   <div id='row'>
@@ -47,27 +61,24 @@ savedTodos.forEach((element) => {
    </div>
     `;
 });
-let dec = document.getElementById('dec')
+let dec = document.getElementById("dec");
 let check = document.querySelectorAll("#check");
 check.forEach((element) => {
   element.addEventListener("change", () => {
-    if(this.checked){
-        dec.style.textDecoration = 'underline';
-      }
-      else{
-        dec.style.textDecoration = "none";
-      }
+    if (this.checked) {
+      dec.style.textDecoration = "underline";
+    } else {
+      dec.style.textDecoration = "none";
+    }
     let checkId = element.getAttribute("data-id");
     savedTodos.forEach((element) => {
       if (checkId == element.id) {
-        
         if (element.completed) {
           element.completed = false;
         } else if (!element.completed) {
           element.completed = true;
         }
       }
-      
     });
     localStorage.setItem("savedTodos", JSON.stringify(savedTodos));
   });
@@ -87,7 +98,7 @@ del.forEach((element) => {
   });
 });
 let all = document.getElementById("all");
-all.addEventListener('click', ()=>{
+all.addEventListener("click", () => {
   savedTodos.forEach((element) => {
     todosList.innerHTML += `
     <div id= 'list'>
@@ -98,8 +109,9 @@ all.addEventListener('click', ()=>{
       <button id= 'delete' data-id= '${element.id}'><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path fill="#494C6B" fill-rule="evenodd" d="M16.97 0l.708.707L9.546 8.84l8.132 8.132-.707.707-8.132-8.132-8.132 8.132L0 16.97l8.132-8.132L0 .707.707 0 8.84 8.132 16.971 0z"/></svg></button>
      </div>
       `;
-  })
-})
+  });
+  location.reload();
+});
 let active = document.getElementById("active");
 active.addEventListener("click", () => {
   savedTodos.forEach((element) => {
@@ -115,15 +127,14 @@ active.addEventListener("click", () => {
     }
   });
 });
-active.addEventListener('dblclick', ()=>{
-  activeTodos.innerHTML+=""
-})
+active.addEventListener("dblclick", () => {
+  activeTodos.innerHTML += "";
+});
 let completed = document.getElementById("completed");
 completed.addEventListener("click", () => {
   savedTodos.forEach((element) => {
     if (element.completed == true) {
-      completedTodos.innerHTML += 
-      `
+      completedTodos.innerHTML += `
       Completed:
       <div id= 'list'>
         <div id='row'>
@@ -137,13 +148,12 @@ completed.addEventListener("click", () => {
 completed.addEventListener("dblclick", () => {
   todosList.innerHTML = "";
 });
-let clearCompleted = document.getElementById('clearCompleted')
-clearCompleted.addEventListener('click', ()=>{  
-  const uncompleted = savedTodos.filter(function(todoObj) {
-    return todoObj.completed==false
+let clearCompleted = document.getElementById("clearCompleted");
+clearCompleted.addEventListener("click", () => {
+  const uncompleted = savedTodos.filter(function (todoObj) {
+    return todoObj.completed == false;
   });
-  savedTodos=uncompleted
-  localStorage.setItem("savedTodos", JSON.stringify(savedTodos))
-  location.reload()
-  })
- 
+  savedTodos = uncompleted;
+  localStorage.setItem("savedTodos", JSON.stringify(savedTodos));
+  location.reload();
+});
