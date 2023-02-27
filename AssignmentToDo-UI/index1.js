@@ -24,14 +24,14 @@ createTask.addEventListener("click", () => {
     // let upadatedTodos =JSON.parse(localStorage.getItem("savedTodos"))
 
     //localStorage.setItem('up', JSON.stringify( upadatedTodos))
-    localStorage.setItem("savedTodos", JSON.stringify(todos));
-   // let savedTodos = JSON.parse(localStorage.getItem("savedTodos"));
+   
+   let savedTodos = JSON.parse(localStorage.getItem("savedTodos"));
     savedTodos.push(todoObj);
-
+    localStorage.setItem("savedTodos", JSON.stringify(savedTodos));
     let todo = (document.getElementById("todo").value = "");
    
 
-   // location.reload();
+   location.reload();
 
     todosList.innerHTML += `
   <div id= 'list'> 
