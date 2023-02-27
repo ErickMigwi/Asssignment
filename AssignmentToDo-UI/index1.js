@@ -24,12 +24,26 @@ createTask.addEventListener("click", () => {
     // let upadatedTodos =JSON.parse(localStorage.getItem("savedTodos"))
 
     //localStorage.setItem('up', JSON.stringify( upadatedTodos))
-   
-   let savedTodos = JSON.parse(localStorage.getItem("savedTodos"));
-    savedTodos.push(todoObj);
+    let savedTodos = null;
+    const savedTodosString = localStorage.getItem("savedTodos");
+    
+    if (savedTodosString) {
+      try {
+        savedTodos = JSON.parse(savedTodosString);
+      } catch (error) {
+        console.error("Error parsing savedTodos JSON data", error);
+      }
+    }
+    
+    if (savedTodos) {
+      savedTodos.push(todoObj);
+    } else {
+      savedTodos = [todoObj];
+    }
+    
     localStorage.setItem("savedTodos", JSON.stringify(savedTodos));
+    
     let todo = (document.getElementById("todo").value = "");
-   
 
    location.reload();
 

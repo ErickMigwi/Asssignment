@@ -10,6 +10,8 @@ class Employee {
     console.log(`${this.name} is working.`);
   }
 }
+let Employee1 =new Employee("Erick", 200000000)
+console.log(Employee1);
 
 // Pharmacist class
 class Pharmacist extends Employee {
@@ -21,7 +23,8 @@ class Pharmacist extends Employee {
     console.log(`${this.name} writes a prescription for ${patient}.`);
   }
 }
-
+let Pharmacist1 = new Pharmacist("Erick", 40000000)
+console.log(Pharmacist1);
 // Cashier class
 class Cashier extends Employee {
   constructor(name, salary) {
